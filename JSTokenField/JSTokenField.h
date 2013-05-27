@@ -36,21 +36,23 @@ extern NSString *const JSTokenFieldNewFrameKey;
 extern NSString *const JSTokenFieldOldFrameKey;
 extern NSString *const JSDeletedTokenKey;
 
+extern NSString *const JSTokenFieldFrameExpanding;
+extern NSString *const JSTokenFieldFrameContracting;
+
+
 @interface JSTokenField : UIView <UITextFieldDelegate> {
 	
 	NSMutableArray *_tokens;
 	
-	UITextField *_textField;
-	
-	id <JSTokenFieldDelegate> _delegate;
-	
+		
 	JSTokenButton *_deletedToken;
 	
-	UILabel *_label;
+    int _lines;
+    int _oldLines;
 }
 
-@property (nonatomic, readonly) UITextField *textField;
-@property (nonatomic, retain) UILabel *label;
+@property (nonatomic, retain) IBOutlet UILabel *label;
+@property (nonatomic, retain) IBOutlet UITextField *textField;
 @property (nonatomic, readonly, copy) NSMutableArray *tokens;
 @property (nonatomic, assign) id <JSTokenFieldDelegate> delegate;
 
@@ -71,8 +73,8 @@ extern NSString *const JSDeletedTokenKey;
 
 
 - (void)tokenFieldTextDidChange:(JSTokenField *)tokenField;
-
 - (BOOL)tokenFieldShouldReturn:(JSTokenField *)tokenField;
 - (void)tokenFieldDidEndEditing:(JSTokenField *)tokenField;
+- (void)tokenFieldDidStartEditing:(JSTokenField *)tokenField;
 
 @end
