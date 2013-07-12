@@ -25,7 +25,6 @@
 //	authors and should not be interpreted as representing official policies, either expressed
 //	or implied, of James Addyman (JamSoft).
 //
-#import "CGRect+MGLayout.h"
 
 #import "JSTokenField.h"
 #import "JSTokenButton.h"
