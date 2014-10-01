@@ -52,6 +52,7 @@ extern NSString *const JSDeletedTokenKey;
 @property (nonatomic, readonly) UITextField *textField;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, readonly, copy) NSMutableArray *tokens;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, weak) id <JSTokenFieldDelegate> delegate;
 
 - (void)addTokenWithTitle:(NSString *)string representedObject:(id)obj;

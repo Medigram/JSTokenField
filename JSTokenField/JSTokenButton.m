@@ -37,6 +37,7 @@
 @synthesize highlightedBg = _highlightedBg;
 @synthesize representedObject = _representedObject;
 @synthesize parentField = _parentField;
+@synthesize name;
 
 + (JSTokenButton *)tokenWithString:(NSString *)string representedObject:(id)obj
 {

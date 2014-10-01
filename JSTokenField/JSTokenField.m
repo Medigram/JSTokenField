@@ -56,6 +56,7 @@ NSString *const JSDeletedTokenKey = @"JSDeletedTokenKey";
 @synthesize textField = _textField;
 @synthesize label = _label;
 @synthesize delegate = _delegate;
+@synthesize name;
 
 - (id)initWithFrame:(CGRect)frame
 {

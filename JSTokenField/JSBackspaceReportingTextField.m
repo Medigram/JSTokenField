@@ -10,6 +10,8 @@
 
 @implementation JSBackspaceReportingTextField
 
+@synthesize name;
+
 - (void)deleteBackward {
     BOOL shouldDismiss = (self.text.length == 0);
 
