@@ -173,13 +173,9 @@ NSString *const JSDeletedTokenKey = @"JSDeletedTokenKey";
     }];
 }
 
-- (void)removeAllTokens {
-	NSArray *tokensCopy = _tokens;
-	for (JSTokenButton *button in tokensCopy) {
-		[self removeTokenWithTest:^BOOL(JSTokenButton *token) {
-			return token == button;
-		}];
-	}
+- (void)removeAllTokens
+{
+    [_tokens removeAllObjects];
 }
 
 - (void)deleteHighlightedToken
