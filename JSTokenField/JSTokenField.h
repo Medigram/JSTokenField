@@ -59,6 +59,7 @@ extern NSString *const JSDeletedTokenKey;
 - (void)removeTokenForString:(NSString *)string;
 - (void)removeTokenWithRepresentedObject:(id)representedObject;
 - (void)removeAllTokens;
+- (void)removeAllTokensAlsoFromView;
 
 @end
 

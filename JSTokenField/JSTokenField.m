@@ -178,6 +178,23 @@ NSString *const JSDeletedTokenKey = @"JSDeletedTokenKey";
     [_tokens removeAllObjects];
 }
 
+- (void)removeAllTokensAlsoFromView
+{
+    JSTokenButton *tokenToRemove = nil;
+    for (JSTokenButton *token in [_tokens reverseObjectEnumerator]) {
+        if (token) {
+            tokenToRemove = token;
+            if (tokenToRemove.isFirstResponder) {
+                [_textField becomeFirstResponder];
+            }
+            [tokenToRemove removeFromSuperview];
+            
+            [_tokens removeObject:tokenToRemove];
+        }
+    }
+    [self setNeedsLayout];
+}
+
 - (void)deleteHighlightedToken
 {
 	for (int i = 0; i < [_tokens count]; i++)
